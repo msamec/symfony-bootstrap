@@ -1,0 +1,33 @@
+version: '2'
+services:
+    php:
+        build: ./docker/php-fpm
+        volumes:
+            - ./:/var/www/html:cached
+            - ./logs/symfony:/var/www/html/var/logs:cached
+        extra_hosts:
+            - "docker.host:127.0.0.1"
+    
+    nginx:
+        build: ./docker/nginx
+        ports:
+            - "8080:80"
+        volumes:
+            - ./logs/nginx/:/var/log/nginx:cached
+        volumes_from:
+          - php
+        depends_on:
+          - php
+         
+    db:
+        image: mysql:5.7
+        ports:
+            - "3306:3306"
+        environment:
+            MYSQL_ROOT_PASSWORD: root
+            MYSQL_DATABASE: skeleton
+            MYSQL_USER: skeleton
+            MYSQL_PASSWORD: skeleton
+        depends_on:
+          - php
+          - nginx
