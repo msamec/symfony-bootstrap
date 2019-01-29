@@ -7,7 +7,7 @@ use Symfony\Component\Validator\ConstraintViolation;
 use Symfony\Component\Validator\Validator\ValidatorInterface;
 
 /**
- * Class ValidatorService
+ * Class ValidatorService.
  */
 final class ValidatorService
 {
@@ -18,6 +18,7 @@ final class ValidatorService
 
     /**
      * ValidatorService constructor.
+     *
      * @param ValidatorInterface $validator
      */
     public function __construct(
@@ -29,6 +30,7 @@ final class ValidatorService
     /**
      * @param mixed $object
      * @param array $groups
+     *
      * @throws ValidationException
      */
     public function validate($object, array $groups = []): void
@@ -41,7 +43,7 @@ final class ValidatorService
                 $property = (string) string($error->getPropertyPath())->toSnakeCase();
                 $errors[$property] = [
                     'message' => $error->getMessage(),
-                    'description' => $error->getMessageTemplate()
+                    'description' => $error->getMessageTemplate(),
                 ];
             }
 

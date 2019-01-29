@@ -8,10 +8,10 @@ use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 abstract class EntityRepository extends ServiceEntityRepository
 {
     /**
-     * Save entity (create)
+     * Save entity (create).
      *
      * @param EntityInterface $entity
-     * @param boolean $flush
+     * @param bool            $flush
      */
     public function save(EntityInterface $entity, $flush = true): void
     {
@@ -23,7 +23,7 @@ abstract class EntityRepository extends ServiceEntityRepository
 
     /**
      * @param EntityInterface $entity
-     * @param boolean $flush
+     * @param bool            $flush
      */
     public function remove(EntityInterface $entity, $flush = true): void
     {

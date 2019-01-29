@@ -29,12 +29,12 @@ final class RequestJsonToArraySubscriber implements EventSubscriberInterface
     public static function getSubscribedEvents()
     {
         return [
-            KernelEvents::CONTROLLER => 'convertJsonToArray'
+            KernelEvents::CONTROLLER => 'convertJsonToArray',
         ];
     }
 
     /**
-     * Convert request JSON into array
+     * Convert request JSON into array.
      *
      * @param FilterControllerEvent $event
      */
@@ -42,7 +42,7 @@ final class RequestJsonToArraySubscriber implements EventSubscriberInterface
     {
         $request = $event->getRequest();
 
-        if ($request->getContentType() !== 'json' || !$request->getContent()) {
+        if ('json' !== $request->getContentType() || !$request->getContent()) {
             return;
         }
 

@@ -13,7 +13,7 @@ use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 final class ExceptionListener
 {
     /**
-     * Debug mode
+     * Debug mode.
      *
      * @var bool
      */
@@ -80,7 +80,7 @@ final class ExceptionListener
         $exception = $this->exception;
         $this->response = [
             'message' => $exception->getMessage(),
-            'code' => $exception->getStatusCode()
+            'code' => $exception->getStatusCode(),
         ];
     }
 
@@ -99,7 +99,7 @@ final class ExceptionListener
         $exception = $this->exception;
         $this->response = [
             'message' => $exception->getMessage(),
-            'code' => $exception->getStatusCode()
+            'code' => $exception->getStatusCode(),
         ];
     }
 
@@ -107,7 +107,7 @@ final class ExceptionListener
     {
         $this->response = [
             'message' => $this->exception->getMessage(),
-            'code' => $this->exception->getCode() === 0 ? Response::HTTP_BAD_REQUEST : $this->exception->getCode()
+            'code' => 0 === $this->exception->getCode() ? Response::HTTP_BAD_REQUEST : $this->exception->getCode(),
         ];
     }
 }

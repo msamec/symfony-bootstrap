@@ -5,7 +5,7 @@ namespace App\Exception;
 use Symfony\Component\HttpFoundation\Response;
 
 /**
- * Class ValidationException
+ * Class ValidationException.
  */
 final class ValidationException extends \Exception
 {
@@ -16,8 +16,9 @@ final class ValidationException extends \Exception
 
     /**
      * ValidationException constructor.
+     *
      * @param string $message
-     * @param array $extraData
+     * @param array  $extraData
      */
     public function __construct($message = '', array $extraData = [])
     {

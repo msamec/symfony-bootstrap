@@ -129,9 +129,9 @@ class User implements EntityInterface, UserInterface
      * and populated in any number of different ways when the user object
      * is created.
      *
-     * @return (Role|string)[] The user roles
+     * @return array The user roles
      */
-    public function getRoles()
+    public function getRoles(): array
     {
         // TODO: Implement getRoles() method.
     }

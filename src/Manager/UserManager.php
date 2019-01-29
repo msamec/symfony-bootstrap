@@ -6,8 +6,6 @@ use App\Entity\User;
 use App\Exception\ValidationException;
 use App\Factory\EntityFactory;
 use App\Repository\UserRepository;
-use GuzzleHttp\Exception\RequestException;
-use Symfony\Component\HttpFoundation\Response;
 
 /**
  * Class UserManager.

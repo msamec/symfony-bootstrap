@@ -102,6 +102,7 @@ final class UserController
      * @param Request $request
      *
      * @return JsonResponse
+     *
      * @throws ValidationException
      */
     public function create(Request $request): JsonResponse
@@ -137,9 +138,10 @@ final class UserController
      * @SWG\Tag(name="User")
      *
      * @param Request $request
-     * @param User $user
+     * @param User    $user
      *
      * @return JsonResponse
+     *
      * @throws ValidationException
      */
     public function update(Request $request, User $user): JsonResponse

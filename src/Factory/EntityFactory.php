@@ -9,7 +9,7 @@ use JsonSerializable;
 use Symfony\Component\Serializer\SerializerInterface;
 
 /**
- * Class EntityFactory
+ * Class EntityFactory.
  */
 final class EntityFactory
 {
@@ -24,8 +24,9 @@ final class EntityFactory
 
     /**
      * EntityFactory constructor.
+     *
      * @param SerializerInterface $serializer
-     * @param ValidatorService $validator
+     * @param ValidatorService    $validator
      */
     public function __construct(
         SerializerInterface $serializer,
@@ -36,10 +37,12 @@ final class EntityFactory
     }
 
     /**
-     * @param mixed $data
+     * @param mixed  $data
      * @param string $class
-     * @param array $context
+     * @param array  $context
+     *
      * @return EntityInterface
+     *
      * @throws ValidationException
      */
     public function create($data, string $class, array $context = []): EntityInterface

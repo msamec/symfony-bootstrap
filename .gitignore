@@ -1,6 +1,7 @@
 docker-compose.yml
 logs
 .idea
+phpstan.neon
 
 ###> symfony/framework-bundle ###
 /.env.local
