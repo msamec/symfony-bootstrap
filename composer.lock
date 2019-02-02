@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "42b059b0719877ac7a6becb12ef0180f",
+    "content-hash": "1f009b9a948e5d6ee88a7a419bceaac1",
     "packages": [
         {
             "name": "anahkiasen/underscore-php",
@@ -4709,6 +4709,42 @@
             "time": "2019-01-16T14:22:17+00:00"
         },
         {
+            "name": "codeception/assert-throws",
+            "version": "1.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Codeception/AssertThrows.git",
+                "reference": "98750b1321da1325142b5ecc8c42cb342f429141"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Codeception/AssertThrows/zipball/98750b1321da1325142b5ecc8c42cb342f429141",
+                "reference": "98750b1321da1325142b5ecc8c42cb342f429141",
+                "shasum": ""
+            },
+            "require": {
+                "phpunit/phpunit": "^6.4|^7.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Codeception\\": "./"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Davert",
+                    "email": "davert@codeception.com"
+                }
+            ],
+            "description": "Assert exception was thrown without stopping a test",
+            "time": "2018-02-09T17:20:20+00:00"
+        },
+        {
             "name": "codeception/codeception",
             "version": "2.5.2",
             "source": {
@@ -9189,7 +9225,8 @@
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
-        "php": "^7.1.3"
+        "php": "^7.1.3",
+        "ext-json": "*"
     },
     "platform-dev": []
 }

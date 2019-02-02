@@ -3,6 +3,7 @@
     "license": "proprietary",
     "require": {
         "php": "^7.1.3",
+        "ext-json": "*",
         "doctrine/annotations": "^1.6",
         "lexik/jwt-authentication-bundle": "^2.6",
         "nelmio/cors-bundle": "^1.5",
@@ -23,10 +24,11 @@
         "symfony/yaml": "*"
     },
     "require-dev": {
-        "nelmio/api-doc-bundle": "^3.3",
+        "codeception/assert-throws": "^1.0",
         "codeception/codeception": "^2.5",
         "hautelook/alice-bundle": "^2.3",
         "msamec/git-hooks": "^1.0",
+        "nelmio/api-doc-bundle": "^3.3",
         "phpstan/phpstan": "^0.10.3",
         "phpstan/phpstan-symfony": "^0.10.1",
         "squizlabs/php_codesniffer": "^3.3",
