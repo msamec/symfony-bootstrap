@@ -38,6 +38,19 @@ final class UserManager
     }
 
     /**
+     * @param string $email
+     *
+     * @return User|null
+     */
+    public function findByEmail(string $email): ?User
+    {
+        /** @var User|null $user */
+        $user = $this->userRepository->findOneBy(['email' => $email]);
+
+        return $user;
+    }
+
+    /**
      * @param array $data
      *
      * @return User

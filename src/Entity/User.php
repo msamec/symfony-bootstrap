@@ -133,7 +133,7 @@ class User implements EntityInterface, UserInterface
      */
     public function getRoles(): array
     {
-        // TODO: Implement getRoles() method.
+        return ['ROLE_ADMIN'];
     }
 
     /**
@@ -168,7 +168,7 @@ class User implements EntityInterface, UserInterface
      */
     public function getUsername()
     {
-        // TODO: Implement getUsername() method.
+        return $this->email;
     }
 
     /**
