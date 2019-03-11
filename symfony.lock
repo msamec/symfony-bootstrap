@@ -2,27 +2,6 @@
     "anahkiasen/underscore-php": {
         "version": "2.0.0"
     },
-    "behat/gherkin": {
-        "version": "v4.6.0"
-    },
-    "codeception/assert-throws": {
-        "version": "1.0.1"
-    },
-    "codeception/codeception": {
-        "version": "2.3",
-        "recipe": {
-            "repo": "github.com/symfony/recipes-contrib",
-            "branch": "master",
-            "version": "2.3",
-            "ref": "d2a29c0abee586aff913fd45fae1f59b669f4cbe"
-        }
-    },
-    "codeception/phpunit-wrapper": {
-        "version": "7.6.1"
-    },
-    "codeception/stub": {
-        "version": "2.0.4"
-    },
     "composer/ca-bundle": {
         "version": "1.1.4"
     },
@@ -113,9 +92,6 @@
     "exsyst/swagger": {
         "version": "v0.4.1"
     },
-    "facebook/webdriver": {
-        "version": "1.6.0"
-    },
     "friendsofphp/php-cs-fixer": {
         "version": "2.2",
         "recipe": {
@@ -127,15 +103,6 @@
     },
     "fzaninotto/faker": {
         "version": "v1.8.0"
-    },
-    "guzzlehttp/guzzle": {
-        "version": "6.3.3"
-    },
-    "guzzlehttp/promises": {
-        "version": "v1.3.1"
-    },
-    "guzzlehttp/psr7": {
-        "version": "1.5.2"
     },
     "hautelook/alice-bundle": {
         "version": "2.1",
@@ -239,12 +206,6 @@
     "patchwork/utf8": {
         "version": "v1.3.1"
     },
-    "phar-io/manifest": {
-        "version": "1.0.3"
-    },
-    "phar-io/version": {
-        "version": "2.0.1"
-    },
     "php-composter/php-composter": {
         "version": "v0.3.3"
     },
@@ -260,9 +221,6 @@
     "phpdocumentor/type-resolver": {
         "version": "0.4.0"
     },
-    "phpspec/prophecy": {
-        "version": "1.8.0"
-    },
     "phpstan/phpdoc-parser": {
         "version": "0.3.1"
     },
@@ -272,49 +230,16 @@
     "phpstan/phpstan-symfony": {
         "version": "0.10.2"
     },
-    "phpunit/php-code-coverage": {
-        "version": "6.1.4"
-    },
-    "phpunit/php-file-iterator": {
-        "version": "2.0.2"
-    },
-    "phpunit/php-text-template": {
-        "version": "1.2.1"
-    },
-    "phpunit/php-timer": {
-        "version": "2.0.0"
-    },
-    "phpunit/php-token-stream": {
-        "version": "3.0.1"
-    },
-    "phpunit/phpunit": {
-        "version": "4.7",
-        "recipe": {
-            "repo": "github.com/symfony/recipes",
-            "branch": "master",
-            "version": "4.7",
-            "ref": "89239f0cf2759efccc76b9944083bfcc4d180f9d"
-        }
-    },
     "psr/cache": {
         "version": "1.0.1"
     },
     "psr/container": {
         "version": "1.0.0"
     },
-    "psr/http-message": {
-        "version": "1.0.1"
-    },
     "psr/log": {
         "version": "1.1.0"
     },
     "psr/simple-cache": {
-        "version": "1.0.1"
-    },
-    "ralouphie/getallheaders": {
-        "version": "2.0.5"
-    },
-    "sebastian/code-unit-reverse-lookup": {
         "version": "1.0.1"
     },
     "sebastian/comparator": {
@@ -323,29 +248,11 @@
     "sebastian/diff": {
         "version": "3.0.1"
     },
-    "sebastian/environment": {
-        "version": "4.0.2"
-    },
     "sebastian/exporter": {
         "version": "3.1.0"
     },
-    "sebastian/global-state": {
-        "version": "2.0.0"
-    },
-    "sebastian/object-enumerator": {
-        "version": "3.0.3"
-    },
-    "sebastian/object-reflector": {
-        "version": "1.1.1"
-    },
     "sebastian/recursion-context": {
         "version": "3.0.0"
-    },
-    "sebastian/resource-operations": {
-        "version": "2.0.1"
-    },
-    "sebastian/version": {
-        "version": "2.0.1"
     },
     "seld/jsonlint": {
         "version": "1.7.1"
@@ -377,9 +284,6 @@
     "symfony/asset": {
         "version": "v4.2.2"
     },
-    "symfony/browser-kit": {
-        "version": "v4.2.2"
-    },
     "symfony/cache": {
         "version": "v4.2.2"
     },
@@ -398,9 +302,6 @@
     "symfony/contracts": {
         "version": "v1.0.2"
     },
-    "symfony/css-selector": {
-        "version": "v4.2.2"
-    },
     "symfony/debug": {
         "version": "v4.2.2"
     },
@@ -408,9 +309,6 @@
         "version": "v4.2.2"
     },
     "symfony/doctrine-bridge": {
-        "version": "v4.2.2"
-    },
-    "symfony/dom-crawler": {
         "version": "v4.2.2"
     },
     "symfony/dotenv": {
@@ -565,9 +463,6 @@
             "version": "1.0",
             "ref": "fe5a50faf580eb58f08ada2abe8afbd2d4941e05"
         }
-    },
-    "theseer/tokenizer": {
-        "version": "1.1.0"
     },
     "twig/twig": {
         "version": "v2.6.2"
