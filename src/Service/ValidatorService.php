@@ -29,7 +29,7 @@ use Symfony\Component\Validator\Validator\ValidatorInterface;
         if (\count($validationErrors = $this->validator->validate($object, null, $groups)) > 0) {
             /** @var ConstraintViolation $error */
             foreach ($validationErrors as $error) {
-                $property = (string) string($error->getPropertyPath())->toSnakeCase();
+                $property = $error->getPropertyPath();
                 $errors[$property] = [
                     'message' => $error->getMessage(),
                     'description' => $error->getMessageTemplate(),
