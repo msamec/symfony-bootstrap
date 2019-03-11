@@ -6,21 +6,10 @@ use App\Exception\ValidationException;
 use Symfony\Component\Validator\ConstraintViolation;
 use Symfony\Component\Validator\Validator\ValidatorInterface;
 
-/**
- * Class ValidatorService.
- */
-final class ValidatorService
+/*final*/ class ValidatorService
 {
-    /**
-     * @var ValidatorInterface
-     */
     private $validator;
 
-    /**
-     * ValidatorService constructor.
-     *
-     * @param ValidatorInterface $validator
-     */
     public function __construct(
         ValidatorInterface $validator
     ) {
