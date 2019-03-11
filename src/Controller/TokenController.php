@@ -2,7 +2,7 @@
 
 namespace App\Controller;
 
-use App\Manager\UserManager;
+use App\Action\User\FetchUser;
 use Lexik\Bundle\JWTAuthenticationBundle\Encoder\JWTEncoderInterface;
 use Swagger\Annotations as SWG;
 use Symfony\Component\HttpFoundation\JsonResponse;
@@ -14,25 +14,16 @@ use Symfony\Component\Serializer\SerializerInterface;
 
 final class TokenController
 {
-    /**
-     * @var UserManager
-     */
-    private $userManager;
-    /**
-     * @var JWTEncoderInterface
-     */
+    private $fetchUser;
     private $encoder;
-    /**
-     * @var SerializerInterface
-     */
     private $serializer;
 
     public function __construct(
-        UserManager $userManager,
+        FetchUser $fetchUser,
         JWTEncoderInterface $encoder,
         SerializerInterface $serializer
     ) {
-        $this->userManager = $userManager;
+        $this->fetchUser = $fetchUser;
         $this->encoder = $encoder;
         $this->serializer = $serializer;
     }
@@ -64,7 +55,7 @@ final class TokenController
      */
     public function create(Request $request): JsonResponse
     {
-        $user = $this->userManager->findByEmail($request->request->get('email'));
+        $user = $this->fetchUser->byEmail($request->request->get('email'));
         if (!$user) {
             throw new NotFoundHttpException('User not found!');
         }

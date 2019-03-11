@@ -2,9 +2,11 @@
 
 namespace App\Controller;
 
+use App\Action\User\CreateUser;
+use App\Action\User\DeleteUser;
+use App\Action\User\FetchUser;
+use App\Action\User\UpdateUser;
 use App\Entity\User;
-use App\Exception\ValidationException;
-use App\Manager\UserManager;
 use Nelmio\ApiDocBundle\Annotation\Model;
 use Swagger\Annotations as SWG;
 use Symfony\Component\HttpFoundation\JsonResponse;
@@ -15,21 +17,11 @@ use Symfony\Component\Serializer\SerializerInterface;
 
 final class UserController
 {
-    /**
-     * @var UserManager
-     */
-    private $manager;
-
-    /**
-     * @var SerializerInterface
-     */
     private $serializer;
 
     public function __construct(
-        UserManager $manager,
         SerializerInterface $serializer
     ) {
-        $this->manager = $manager;
         $this->serializer = $serializer;
     }
 
@@ -44,10 +36,14 @@ final class UserController
      *     )
      * )
      * @SWG\Tag(name="User")
+     *
+     * @param FetchUser $fetchUser
+     *
+     * @return JsonResponse
      */
-    public function index(): JsonResponse
+    public function index(FetchUser $fetchUser): JsonResponse
     {
-        $users = $this->manager->all();
+        $users = $fetchUser->all();
         $json = $this->serializer->serialize($users, 'json', ['groups' => ['user:index']]);
 
         return new JsonResponse($json, Response::HTTP_OK, [], true);
@@ -99,15 +95,14 @@ final class UserController
      * )
      * @SWG\Tag(name="User")
      *
-     * @param Request $request
+     * @param Request    $request
+     * @param CreateUser $createUser
      *
      * @return JsonResponse
-     *
-     * @throws ValidationException
      */
-    public function create(Request $request): JsonResponse
+    public function create(Request $request, CreateUser $createUser): JsonResponse
     {
-        $user = $this->manager->create($request->request->all());
+        $user = $createUser->execute($request->request->all());
         $json = $this->serializer->serialize($user, 'json', ['groups' => ['user:get']]);
 
         return new JsonResponse($json, Response::HTTP_CREATED, [], true);
@@ -137,16 +132,15 @@ final class UserController
      * )
      * @SWG\Tag(name="User")
      *
-     * @param Request $request
-     * @param User    $user
+     * @param Request    $request
+     * @param User       $user
+     * @param UpdateUser $updateUser
      *
      * @return JsonResponse
-     *
-     * @throws ValidationException
      */
-    public function update(Request $request, User $user): JsonResponse
+    public function update(Request $request, User $user, UpdateUser $updateUser): JsonResponse
     {
-        $user = $this->manager->update($user, $request->request->all());
+        $user = $updateUser->execute($user, $request->request->all());
         $json = $this->serializer->serialize($user, 'json', ['groups' => ['user:get']]);
 
         return new JsonResponse($json, Response::HTTP_OK, [], true);
@@ -166,13 +160,14 @@ final class UserController
      * )
      * @SWG\Tag(name="User")
      *
-     * @param User $user
+     * @param User       $user
+     * @param DeleteUser $deleteUser
      *
      * @return JsonResponse
      */
-    public function delete(User $user): JsonResponse
+    public function delete(User $user, DeleteUser $deleteUser): JsonResponse
     {
-        $this->manager->delete($user);
+        $deleteUser->execute($user);
 
         return new JsonResponse(null, Response::HTTP_NO_CONTENT);
     }
