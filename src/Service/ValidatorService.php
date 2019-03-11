@@ -21,6 +21,7 @@ use Symfony\Component\Validator\Validator\ValidatorInterface;
      * @param array $groups
      *
      * @return bool
+     *
      * @throws ValidationException
      */
     public function validate($object, array $groups = []): bool
