@@ -20,9 +20,10 @@ use Symfony\Component\Validator\Validator\ValidatorInterface;
      * @param mixed $object
      * @param array $groups
      *
+     * @return bool
      * @throws ValidationException
      */
-    public function validate($object, array $groups = []): void
+    public function validate($object, array $groups = []): bool
     {
         $errors = [];
 
@@ -38,5 +39,7 @@ use Symfony\Component\Validator\Validator\ValidatorInterface;
 
             throw new ValidationException('Validation failed', $errors);
         }
+
+        return true;
     }
 }
