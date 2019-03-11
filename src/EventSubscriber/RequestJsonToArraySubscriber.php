@@ -49,7 +49,7 @@ final class RequestJsonToArraySubscriber implements EventSubscriberInterface
         /** @var string $content */
         $content = $request->getContent();
 
-        $data = \GuzzleHttp\json_decode($content, true);
+        $data = \Safe\json_decode($content, true);
 
         $request->request->replace(\is_array($data) ? $data : []);
     }
