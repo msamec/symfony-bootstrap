@@ -41,7 +41,6 @@ class User implements EntityInterface, UserInterface
      *
      * @ORM\Column(name="first_name", type="string", length=255, nullable=true)
      * @Groups({"user:index", "user:get", "user:create", "user:update"})
-     * @SWG\Property(property="first_name")
      * @Assert\NotBlank()
      */
     private $firstName;
@@ -51,7 +50,6 @@ class User implements EntityInterface, UserInterface
      *
      * @ORM\Column(name="last_name", type="string", length=255, nullable=true)
      * @Groups({"user:index", "user:get", "user:create", "user:update"})
-     * @SWG\Property(property="last_name")
      * @Assert\NotBlank()
      */
     private $lastName;
