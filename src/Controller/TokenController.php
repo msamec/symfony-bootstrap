@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Action\User\FetchUser;
 use Lexik\Bundle\JWTAuthenticationBundle\Encoder\JWTEncoderInterface;
+use Lexik\Bundle\JWTAuthenticationBundle\Exception\JWTEncodeFailureException;
 use Swagger\Annotations as SWG;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
@@ -51,7 +52,7 @@ final class TokenController
      *
      * @return JsonResponse
      *
-     * @throws \Lexik\Bundle\JWTAuthenticationBundle\Exception\JWTEncodeFailureException
+     * @throws JWTEncodeFailureException
      */
     public function create(Request $request): JsonResponse
     {
